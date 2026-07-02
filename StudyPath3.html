@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="PageIcon.jpg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Community Health & Advocacy · Med Yasser</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #eaf2ed;
+            color: #16261f;
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #1f7a52;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 40px;
+            transition: transform 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-6px);
+        }
+
+        /* Under Construction Card */
+        .construction-card {
+            background: white;
+            border-radius: 32px;
+            padding: 60px 48px;
+            box-shadow: 0 8px 40px rgba(31, 122, 82, 0.08);
+            border: 1px solid rgba(31, 122, 82, 0.06);
+        }
+
+        .construction-icon {
+            font-size: 4.5rem;
+            color: #1f7a52;
+            margin-bottom: 20px;
+            display: block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .construction-card h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #16261f;
+            margin-bottom: 8px;
+        }
+
+        .construction-card .subtitle {
+            font-size: 1.1rem;
+            color: #3a6b53;
+            margin-bottom: 20px;
+        }
+
+        .construction-card .divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #1f7a52, #3f9c6c);
+            margin: 16px auto 24px;
+            border-radius: 4px;
+        }
+
+        .construction-card .message {
+            color: #2c5a45;
+            font-size: 1rem;
+            max-width: 480px;
+            margin: 0 auto 24px;
+            line-height: 1.8;
+        }
+
+        /* Progress Bar */
+        .progress-wrapper {
+            margin: 28px 0 16px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #3a6b53;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e8f3ee;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 15%;
+            background: linear-gradient(90deg, #1f7a52, #3f9c6c);
+            border-radius: 50px;
+            animation: progressPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes progressPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Coming Soon Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            margin: 28px 0 12px;
+        }
+
+        .feature-item {
+            background: #f5faf8;
+            padding: 16px 12px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: #e8f3ee;
+            transform: translateY(-4px);
+        }
+
+        .feature-item i {
+            font-size: 1.6rem;
+            color: #1f7a52;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .feature-item span {
+            font-size: 0.7rem;
+            color: #3a6b53;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Status Badge */
+        .status-badge {
+            display: inline-block;
+            background: #fbe9eb;
+            color: #9c3a4a;
+            padding: 6px 24px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .status-badge i {
+            margin-right: 6px;
+        }
+
+        /* Footer Note */
+        .footer-note {
+            margin-top: 32px;
+            font-size: 0.8rem;
+            color: #3a6b53;
+            opacity: 0.7;
+        }
+
+        .footer-note i {
+            color: #1f7a52;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .construction-card {
+                padding: 40px 24px;
+            }
+
+            .construction-card h1 {
+                font-size: 1.8rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .construction-icon {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .construction-card {
+                padding: 30px 18px;
+            }
+
+            .construction-card h1 {
+                font-size: 1.4rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Back Button -->
+        <a href="portfolio.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Profile
+        </a>
+
+        <!-- Under Construction Card -->
+        <div class="construction-card">
+
+            <span class="construction-icon">
+                <i class="fas fa-hands-helping"></i>
+            </span>
+
+            <h1>Community Health &amp; Advocacy</h1>
+            <p class="subtitle">🚧 This page is under construction</p>
+
+            <div class="divider"></div>
+
+            <p class="message">
+                I'm currently building this section with community health modules, 
+                advocacy resources, and volunteer insights. 
+                <br/>Check back soon!
+            </p>
+
+            <!-- Progress Bar -->
+            <div class="progress-wrapper">
+                <div class="progress-label">
+                    <span>Progress</span>
+                    <span>15%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Coming Soon Features -->
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <span>Community Outreach</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>Advocacy Guides</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-globe-africa"></i>
+                    <span>Global Health</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-notes-medical"></i>
+                    <span>Health Education</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Epidemiology</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-handshake"></i>
+                    <span>Volunteer Stories</span>
+                </div>
+            </div>
+
+            <!-- Status Badge -->
+            <span class="status-badge">
+                <i class="fas fa-clock"></i> Expected: <strong>Coming Soon</strong>
+            </span>
+
+        </div>
+
+        <!-- Footer Note -->
+        <p class="footer-note">
+            <i class="fas fa-graduation-cap"></i> 
+            Med Yasser · Building the future of healthcare
+            <span style="margin:0 10px;">·</span>
+            <i class="fas fa-heartbeat" style="color:#1f7a52;"></i>
+        </p>
+
+    </div>
+
+</body>
+</html>
