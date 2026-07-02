@@ -1019,7 +1019,7 @@
             <button class="btn-primary" id="contactBtn">
                 <i class="fas fa-paper-plane"></i> Get in Touch
             </button>
-            <a href="Resume_MedYasser.pdf" download class="btn-primary btn-resume">
+            <a href="CV.pdf" download class="btn-primary btn-resume">
                 <i class="fas fa-file-pdf"></i> Download Resume
             </a>
         </div>
@@ -1029,7 +1029,7 @@
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/mohamed-yasser-lakhfif-74237041b/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://www.instagram.com/murasaxki_/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="mailto:sarah.mitchell@email.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mylakhfif@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
 
             <p class="footer-note">
@@ -1337,8 +1337,12 @@
 
                 setTimeout(() => {
                     ripple.remove();
-                    alert('📬 Thanks for reaching out!\n\nConnect with me via:\n• LinkedIn\n• Instagram\n• Gmail');
-                }, 600);
+                    // Open Gmail compose window with the recipient pre-filled
+                    window.open(
+                        'https://mail.google.com/mail/?view=cm&fs=1&to=mylakhfif@gmail.com&su=' + encodeURIComponent("Let's get in touch"),
+                        '_blank'
+                    );
+                }, 400);
             });
 
             // === INITIAL LOAD ===
